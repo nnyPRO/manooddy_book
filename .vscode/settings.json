@@ -1,0 +1,5 @@
+{
+    "editor.snippetSuggestions": "top",
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "emmet.showSuggestionsAsSnippets": true
+}
