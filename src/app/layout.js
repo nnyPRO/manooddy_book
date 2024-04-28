@@ -13,12 +13,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* <body className={inter.className}> */}
-      <body>
+      <body className="bg-[#F4EAEE]" >
       <div className="grid grid-rows-2">
         <div className="row-span-1">
           <Navbar/>
         </div>
-        <div className="row-span-11">test</div>
+        
+        <div className="row-span-11 ">{children}test</div>
       </div>
         
         {/* {children} */}

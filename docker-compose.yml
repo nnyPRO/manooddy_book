@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3.9'
 
 services:
   app:
@@ -11,3 +11,27 @@ services:
     volumes:
       - .:/app
       - /app/node_modulesds
+    environment:
+      - MYSQL_HOST=my-mysql
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=manoodyy1717
+      - MYSQL_DATABASE=manoody_db
+    depends_on:
+      - mysql
+    networks:
+      - my-app-network
+
+  mysql:
+    image: mysql:latest
+    container_name: my-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=manoodyy1717
+      - MYSQL_DATABASE=manoody_db
+    ports:
+      - '3306:3306'
+    networks:
+      - my-app-network
+
+networks:
+  my-app-network:
+    driver: bridge
