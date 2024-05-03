@@ -20,7 +20,7 @@ const Navbar = () => {
               {/* LOGO */}
               <Link href="/">
                 <h2 className="text-3xl text-[#712573] font-bold ">
-                  manoodyBook
+                  manooddyBook
                 </h2>
               </Link>
               {/* HAMBURGER BUTTON FOR MOBILE */}
@@ -36,7 +36,7 @@ const Navbar = () => {
                       height={30}
                       alt="logo"
                       priority
-                      className="hover:invert-34 hover:sepia-44 hover:saturate-1070 hover:hue-rotate-253 hover:brightness-98 hover:contrast-105"
+                      // className="hover:invert-34 hover:sepia-44 hover:saturate-1070 hover:hue-rotate-253 hover:brightness-98 hover:contrast-105"
                     />
                   ) : (
                     <Image
@@ -45,7 +45,7 @@ const Navbar = () => {
                       width={30}
                       height={30}
                       priority
-                      className="hover:invert-34 hover:sepia-44 hover:saturate-1070 hover:hue-rotate-253 hover:brightness-98 hover:contrast-105"
+                      // className="hover:invert-34 hover:sepia-44 hover:saturate-1070 hover:hue-rotate-253 hover:brightness-98 hover:contrast-105"
                     />
                   )}
                 </button>
