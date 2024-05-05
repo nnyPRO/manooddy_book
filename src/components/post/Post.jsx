@@ -1,23 +1,20 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Post = () => {
   return (
-    <div className="bg-white w-165px rounded-lg ">
+    <Link
+      href="/post"
+      className="bg-white w-48% rounded-lg hover:scale-105 hover:bg-slate-300 cursor-pointer lg:w-90% md:h-full"
+    >
       {/* Header */}
-      <div className="flex p-1">
-        <Image
-          className="bg-none"
-          src="/Icon/Profile.svg"
-          width={25}
-          height={25}
-        ></Image>
+      <div className="flex p-1 gap-1 ">
+        <img
+          className="w-8 h-8 bg-none rounded-full border-[#5c5b5b]"
+          src="/Image/Profile.jpg"
+        ></img>
         <div className="text-xs truncate">
-          <div className="truncate">
-            คนที่นอนเก่งขนาดนี้เป็นของคุณนะ Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Culpa neque ex minus quaerat. Quo
-            facere quod architecto veritatis temporibus nobis enim ad, pariatur
-            similique mollitia fugiat odit, perspiciatis sapiente? Vitae.
-          </div>
+          <div className="truncate">คนที่นอนเก่งขนาดนี้เป็นของคุณนะ</div>
           <div className="text-[#A59CA5]">Posted on 4/4/2024</div>
         </div>
       </div>
@@ -25,25 +22,29 @@ const Post = () => {
       {/* Content */}
       <div className="">
         <img
-          className="w-165px"
+          className=""
           src="/Image/D3XJVgHV4AEBVAv.jpg"
           alt="เพราะเป็นวัยรุ่นจึงเจ็บปวด"
         />
-        <div className="text-xs">
+        <div className="text-xs text-[#5c5b5b] p-1 line-clamp-5">
           <div> เพราะเป็นวัยรุ่นจึงเจ็บปวด สภาพดี 100% ฮะ </div>
-          <div>
+          <div className="text-[#712573] ">
             #หนังสือมือสอง #เพราะเป็นวัยรุ่นจึงเจ็บปวด
-            #ส่งต่อหนังสือมือสองคุณภาพดี #หนังสือจิตวิทยา
+            #ส่งต่อหนังสือมือสองคุณภาพดี #หนังสือจิตวิทยา Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. A, exercitationem minima
+            reiciendis ducimus cum id impedit, similique aliquid officia
+            asperiores magnam? Quasi eum iste libero doloribus modi dicta
+            numquam officiis?
           </div>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="flex items-end space-x-1">
-        <div>฿139</div>
-        <div className="line-through text-xs">฿180</div>
+      <div className="flex items-end space-x-1 pl-1">
+        <div className="font-bold">฿139</div>
+        <div className="line-through text-xs text-[#A59CA5]">฿180</div>
       </div>
-    </div>
+    </Link>
   );
 };
 

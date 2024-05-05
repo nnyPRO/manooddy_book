@@ -13,11 +13,28 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       width: {
+        '48%':'48%',
+        '90%':'90%',
         '80vw': '80vw', // Custom class to set width to 43vw
-        '165px':'165px',
+        '170px':'170px',
+        '420px':'420px',
+        '520px':'520px',
+      },
+      height: {
+        '327px':'327px',
+      },
+      padding: {
+        '1%':'4%',
+        },
+        'bottom': {
+          '8vh':'8vh',
+        },
+      },
+      margin: {
+        '2%':'1%'
       },
       
     },
-  },
-  plugins: [],
+
+  plugins: [require('@tailwindcss/line-clamp'),],
 };
