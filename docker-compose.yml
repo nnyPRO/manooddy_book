@@ -5,33 +5,34 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: manoody_container
+    container_name: manooddy_app
     ports:
       - '3000:3000'
     volumes:
       - .:/app
-      - /app/node_modulesds
+      - /app/node_modules
+    env_file:
+      - .env
     environment:
-      - MYSQL_HOST=my-mysql
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=manoodyy1717
-      - MYSQL_DATABASE=manoody_db
+      - NODE_ENV=production
     depends_on:
-      - mysql
+      - mongo
     networks:
-      - my-app-network
+      - manoody-network
 
-  mysql:
-    image: mysql:latest
-    container_name: my-mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=manoodyy1717
-      - MYSQL_DATABASE=manoody_db
+  mongo:
+    image: mongo:4.4
+    container_name: mongodb_manooddy
     ports:
-      - '3306:3306'
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
     networks:
-      - my-app-network
+      - manoody-network
 
 networks:
-  my-app-network:
+  manoody-network:
     driver: bridge
+
+volumes:
+  mongo-data:

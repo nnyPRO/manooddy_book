@@ -1,12 +1,15 @@
-import Image from "next/image";
 import Post from "@/components/post/Post";
+import { getPosts } from "@/lib/API_data";
+import Image from "next/image";
 
-const Home = () => {
+const Home = async () => {
+  const posts = await getPosts();
+
   return (
-    <div>
+    <div className="bg-[#F4EAEE] ">
       <div className="md:flex md:justify-center md:space-x-3">
         {/* Search */}
-        <div className="flex justify-center pt-5">
+        <div className="flex justify-center pt-5 md:pt-10">
           <div className="flex justify-between items-center bg-white w-80 h-8 rounded-xl md:w-420px lg:w-520px md:h-10">
             <div className="pl-4 font-medium md:text-lg">Find a book ...</div>
             <button className="bg-[#FFACCA] h-8 w-9 pl-1.5 rounded-r-xl hover:scale-110 hover:bg-[#c08ea0] md:h-10 md:w-11">
@@ -21,7 +24,7 @@ const Home = () => {
           </div>
         </div>
         {/* Button to add post */}
-        <div className="flex justify-center pt-3 md:pt-5">
+        <div className="flex justify-center pt-3 md:pt-10">
           <button className="flex space-x-2 justify-center items-center bg-[#FFACCA] w-80 h-8 rounded-xl hover:scale-105 hover:bg-[#c08ea0] md:w-44 md:h-10">
             <div className="font-medium md:text-lg">Add your post</div>
             <Image
@@ -34,11 +37,14 @@ const Home = () => {
           </button>
         </div>
       </div>
+      {/* Post */}
       <div className="px-1% pt-3 md:pt-5">
         <div className="flex flex-wrap justify-between gap-2 lg:grid grid-cols-4">
-          <Post />
-          <Post />
-          <Post />
+          {posts.map((post) => (
+            <div key={post.id}>
+              <Post post={post} />
+            </div>
+          ))}
         </div>
       </div>
     </div>

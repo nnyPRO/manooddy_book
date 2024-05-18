@@ -1,7 +1,11 @@
-import Image from "next/image";
+// "use client";
+
+import { getUser } from "@/lib/API_data";
 import Link from "next/link";
 
-const Post = () => {
+const Post = async ({ post }) => {
+  const users = await getUser();
+
   return (
     <Link
       href="/post"
@@ -14,8 +18,9 @@ const Post = () => {
           src="/Image/Profile.jpg"
         ></img>
         <div className="text-xs truncate">
-          <div className="truncate">คนที่นอนเก่งขนาดนี้เป็นของคุณนะ</div>
-          <div className="text-[#A59CA5]">Posted on 4/4/2024</div>
+          <div className="truncate"></div>
+          <div className="text-[#A59CA5]">Posted on 4/4/2024</div>{" "}
+          {/* ยังไม่ได้เปลี่ยน */}
         </div>
       </div>
 
@@ -27,7 +32,7 @@ const Post = () => {
           alt="เพราะเป็นวัยรุ่นจึงเจ็บปวด"
         />
         <div className="text-xs text-[#5c5b5b] p-1 line-clamp-5">
-          <div> เพราะเป็นวัยรุ่นจึงเจ็บปวด สภาพดี 100% ฮะ </div>
+          <div> {post.description} </div>
           <div className="text-[#712573] ">
             #หนังสือมือสอง #เพราะเป็นวัยรุ่นจึงเจ็บปวด
             #ส่งต่อหนังสือมือสองคุณภาพดี #หนังสือจิตวิทยา Lorem ipsum dolor sit

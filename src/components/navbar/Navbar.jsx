@@ -18,12 +18,12 @@ const Navbar = () => {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             {/* LOGO */}
-            <Link href="/">
+            <Link href="/" prefetch={false}>
               <h2 className="text-3xl text-[#712573] font-bold hover:text-[#b763b9]">
                 manooddyBook
               </h2>
+              {/* HAMBURGER BUTTON FOR MOBILE */}
             </Link>
-            {/* HAMBURGER BUTTON FOR MOBILE */}
             <div className="md:hidden">
               <button
                 className="p-2 rounded-md outline-none focus:border-gray-400 focus:border hover:scale-110 hover:bg-[#c9a5c9]"
@@ -59,26 +59,26 @@ const Navbar = () => {
             }`}
           >
             <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-              <li className="pb-6 text-xl text-[#712573] py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#D996DB]  border-purple-900  md:hover:text-[#D996DB] md:hover:bg-transparent">
-                <Link href="/" onClick={() => setNavbar(!navbar)}>
+              <Link href="/" onClick={() => setNavbar(!navbar)}>
+                <li className="pb-6 text-xl text-[#712573] py-5 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-[#D996DB]  border-purple-900  md:hover:text-[#D996DB] md:hover:bg-transparent">
                   Home
-                </Link>
-              </li>
-              <li className="pb-6 text-xl text-[#712573] py-5 px-6 text-center  border-b-2 md:border-b-0  hover:bg-[#D996DB]  border-purple-900  md:hover:text-[#D996DB] md:hover:bg-transparent">
-                <Link href="/cart" onClick={() => setNavbar(!navbar)}>
+                </li>
+              </Link>
+              <Link href="/cart" onClick={() => setNavbar(!navbar)}>
+                <li className="pb-6 text-xl text-[#712573] py-5 px-6 text-center  border-b-2 md:border-b-0  hover:bg-[#D996DB]  border-purple-900  md:hover:text-[#D996DB] md:hover:bg-transparent">
                   Cart
-                </Link>
-              </li>
-              <li className="pb-6 text-xl text-[#712573] py-5 px-6 text-center  border-b-2 md:border-b-0  hover:bg-[#D996DB]  border-purple-900  md:hover:text-[#D996DB] md:hover:bg-transparent">
-                <Link href="/chat" onClick={() => setNavbar(!navbar)}>
+                </li>
+              </Link>
+              <Link href="/chat" onClick={() => setNavbar(!navbar)}>
+                <li className="pb-6 text-xl text-[#712573] py-5 px-6 text-center  border-b-2 md:border-b-0  hover:bg-[#D996DB]  border-purple-900  md:hover:text-[#D996DB] md:hover:bg-transparent">
                   Chat
-                </Link>
-              </li>
-              <li className="pb-6 text-xl text-[#712573] py-5 px-6 text-center  border-b-2 md:border-b-0  hover:bg-[#D996DB]  border-purple-900  md:hover:text-[#D996DB] md:hover:bg-transparent">
-                <Link href="/profile" onClick={() => setNavbar(!navbar)}>
+                </li>
+              </Link>
+              <Link href="/profile" onClick={() => setNavbar(!navbar)}>
+                <li className="pb-6 text-xl text-[#712573] py-5 px-6 text-center  border-b-2 md:border-b-0  hover:bg-[#D996DB]  border-purple-900  md:hover:text-[#D996DB] md:hover:bg-transparent">
                   Profile
-                </Link>
-              </li>
+                </li>
+              </Link>
             </ul>
           </div>
         </div>

@@ -13,9 +13,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* <body className={inter.className}> */}
-      <body className="bg-[#F4EAEE]" >
+      <body className="" >
       <div className="flex flex-col h-screen">
-        <div className="flex-none h-16 md:h-20 ">
+        <div className="flex-none h-16 md:h-21 ">
           <Navbar/>
         </div>
         
