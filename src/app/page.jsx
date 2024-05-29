@@ -1,12 +1,19 @@
+// "use client";
+
 import Post from "@/components/post/Post";
-import { getPosts } from "@/lib/API_data";
+import { getPosts } from "@/lib/API/getPosts";
 import Image from "next/image";
+
+// const PostHydrationNoSSR = dynamic(() => import("@/components/post/Post"), {
+// ssr: false,
+// });
 
 const Home = async () => {
   const posts = await getPosts();
+  // console.log("typeof posts:", typeof posts);
 
   return (
-    <div className="bg-[#F4EAEE] ">
+    <div>
       <div className="md:flex md:justify-center md:space-x-3">
         {/* Search */}
         <div className="flex justify-center pt-5 md:pt-10">
@@ -41,9 +48,9 @@ const Home = async () => {
       <div className="px-1% pt-3 md:pt-5">
         <div className="flex flex-wrap justify-between gap-2 lg:grid grid-cols-4">
           {posts.map((post) => (
-            <div key={post.id}>
-              <Post post={post} />
-            </div>
+            // <div suppressHydrationWarning key={post.id}>
+            <Post key={post.id} post={post} />
+            // </div>
           ))}
         </div>
       </div>

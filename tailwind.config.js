@@ -22,6 +22,8 @@ module.exports = {
       },
       height: {
         '327px':'327px',
+        '375px':'375px',
+
       },
       padding: {
         '1%':'4%',
