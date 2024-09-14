@@ -1,16 +1,16 @@
-// "use server";
+"use server";
 
-import { connectToDb } from "../connectToDb";
-import PostTag from "../models/PostTags";
-import Tag from "../models/Tags";
+import { connectToDb } from "../../lib/connectToDb";
+import PostTag from "../../lib/models/PostTags";
+import Tag from "../../lib/models/Tags";
 
 export const getTags = async (postID) => {
+  // console.log("postIDDDDDD", typeof postID);
   try {
     await connectToDb();
     // console.log("Connected to database");
 
-    const postTags = await PostTag.find({IdOfPost : postID});
-    // console.log("Fetched postTags:", postTags);
+    const postTags = await PostTag.find({ IdOfPost: postID });
 
     if (postTags.length === 0) {
       console.log("No postTags found for postID:", postID);

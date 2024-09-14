@@ -31,6 +31,9 @@ module.exports = {
         'bottom': {
           '8vh':'8vh',
         },
+        'top': {
+          '25%':'25%',
+        },
       },
       margin: {
         '2%':'1%'

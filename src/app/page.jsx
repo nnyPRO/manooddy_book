@@ -1,7 +1,7 @@
 // "use client";
 
 import Post from "@/components/post/Post";
-import { getPosts } from "@/lib/API/getPosts";
+import { getPosts } from "@/app/api/getPosts";
 import Image from "next/image";
 
 // const PostHydrationNoSSR = dynamic(() => import("@/components/post/Post"), {
@@ -17,7 +17,7 @@ const Home = async () => {
       <div className="md:flex md:justify-center md:space-x-3">
         {/* Search */}
         <div className="flex justify-center pt-5 md:pt-10">
-          <div className="flex justify-between items-center bg-white w-80 h-8 rounded-xl md:w-420px lg:w-520px md:h-10">
+          <div className="flex items-center justify-between h-8 bg-white w-80 rounded-xl md:w-420px lg:w-520px md:h-10">
             <div className="pl-4 font-medium md:text-lg">Find a book ...</div>
             <button className="bg-[#FFACCA] h-8 w-9 pl-1.5 rounded-r-xl hover:scale-110 hover:bg-[#c08ea0] md:h-10 md:w-11">
               <Image
@@ -46,7 +46,7 @@ const Home = async () => {
       </div>
       {/* Post */}
       <div className="px-1% pt-3 md:pt-5">
-        <div className="flex flex-wrap justify-between gap-2 lg:grid grid-cols-4">
+        <div className="flex flex-wrap justify-between grid-cols-4 gap-2 lg:grid">
           {posts.map((post) => (
             // <div suppressHydrationWarning key={post.id}>
             <Post key={post.id} post={post} />
