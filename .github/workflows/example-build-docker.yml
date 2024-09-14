@@ -47,5 +47,5 @@ jobs:
 
     - name: Image digest
       run: |
-        IMAGE_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' ${{ env.REPO_URI }}:latest)
+        IMAGE_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' 667053323606.dkr.ecr.us-east-1.amazonaws.com/ci_docker:latest)
         echo "Docker image pushed: $IMAGE_DIGEST"
