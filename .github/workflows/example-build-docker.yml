@@ -47,5 +47,5 @@ jobs:
 
     - name: Image digest
       run: |
-        IMAGE_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' ${{ env.REPO_URI }}:${{ github.sha }})
+        IMAGE_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' ${{ env.REPO_URI }}:latest)
         echo "Docker image pushed: $IMAGE_DIGEST"
