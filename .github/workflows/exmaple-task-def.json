@@ -1,0 +1,42 @@
+{
+    "requiresCompatibilities": [
+       "FARGATE"
+   ],
+   "containerDefinitions": [
+       {
+           "name": "app-container",
+           "image": "667053323606.dkr.ecr.us-east-1.amazonaws.com/ci_docker:latest",
+           "cpu": 512,
+           "memoryReservation": 512,
+           "portMappings": [
+               {
+                   "containerPort": 3000,
+                   "hostPort": 0,
+                   "protocol": "tcp"
+               }
+           ],
+           "essential": true,
+           "environment": [],
+           "mountPoints": [],
+           "volumesFrom": [],
+           "secrets": [
+                
+           ],
+           "logConfiguration": {
+               "logDriver": "awslogs",
+               "options": {
+                   "awslogs-group": "/ecs/web-app",
+                   "awslogs-region": "us-east-1",
+                   "awslogs-stream-prefix": "ecs"
+               }
+           }
+       }
+   ],
+   "family": "web-app-task-def",
+   "taskRoleArn": "arn:aws:iam::667053323606:role/LabRole",
+   "executionRoleArn": "arn:aws:iam::667053323606:role/LabRole",
+   "networkMode": "awsvpc",
+   "volumes": [],
+   "placementConstraints": [],
+   "tags": []
+}
